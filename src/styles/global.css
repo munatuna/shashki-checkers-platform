@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  /* Board */
+  --color-board-light: #f0d9b5;
+  --color-board-dark:  #b58863;
+
+  /* Chess.com palette */
+  --color-bg:        #262522;
+  --color-surface:   #302e2b;
+  --color-surface-2: #3d3a36;
+  --color-border:    #4a4845;
+  --color-green:     #81b64c;
+  --color-green-h:   #6ea33e;
+  --color-red:       #e04e4e;
+  --color-text:      #e8e6e3;
+  --color-muted:     #999693;
+  --color-link:      #81b64c;
+}
+
+@font-face {
+  font-family: 'ChessFont';
+  src: local('Montserrat'), local('Nunito'), local('system-ui');
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', 'Nunito', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+html[data-theme="light"] body {
+  background: #f0ece6;
+  color: #1a1917;
+}
+html[data-theme="light"] ::-webkit-scrollbar-track { background: #f0ece6; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #d8d4ce; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #b0aca8; }
+
+/* No focus outlines — use background/shadow instead */
+*, *:focus, *:focus-visible { outline: none; }
+
+/* Subtle active press feedback on buttons */
+button:active { filter: brightness(0.82); }
